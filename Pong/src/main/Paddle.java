@@ -17,7 +17,8 @@ public class Paddle extends JPanel
 		setBackground(Color.BLACK);
 		g.setColor(Color.WHITE);
 		g.fillRect(xPos, yPos, 100, 20);
-
+		
+		g.fillOval(300, 300, 10, 10);
 		
 	}
 }
