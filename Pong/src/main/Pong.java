@@ -10,6 +10,7 @@ public class Pong extends JFrame
 	{
 		//setting the super constructor (title)
 		super("Pong");
+
 		
 	}
 		
