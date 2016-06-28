@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 public class Pong extends JFrame 
 {
 	
+
 	public static Pong pong; 
 	
 	public Pong()
@@ -22,8 +23,8 @@ public class Pong extends JFrame
 		pong.setSize(800,600);
 		pong.setVisible(true);
 		pong.setResizable(false);
-		Paddle paddle = new Paddle();
 		//adding paddle (JLabel) to JFrame
+		Paddle paddle = new Paddle();
 		pong.add(paddle);
 		
 	}
