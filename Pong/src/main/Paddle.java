@@ -6,13 +6,14 @@ import javax.swing.*;
 public class Paddle extends JPanel implements KeyListener
 {
 	private final int yPos = 550;
-	//xPos will change. Haven't implemented mouse listener.
-	private int xPos = 30;
+	//xPos changes depending on key press. 
+	private int xPos = 330;
 	
 	public Paddle()
 	{
 		//adds keylistener to Paddle
 		addKeyListener(this);
+		//sets JPanel Focusable
 		setFocusable(true);
 	}
 	//overriding the super class method to draw rectangle. 
