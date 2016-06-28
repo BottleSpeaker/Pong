@@ -6,17 +6,20 @@ import javax.swing.*;
 
 public class Paddle extends JPanel implements KeyListener
 {
-	// yPos is final.
-	private final int yPos = 550;
-	// xPos changes depending on key press.
-	private int xPos = 330;
-
+	// paddleY is final.
+	private final int paddleY = 550;
+	// paddleX changes depending on key press.
+	private int paddleX = 330;
+	private Ball ball;
+	int x = 50;
+	int y = 50;
 	public Paddle()
 	{
 		// adds keylistener to Paddle
 		addKeyListener(this);
 		// sets JPanel Focusable
 		setFocusable(true);
+		ball = new Ball();
 
 	}
 
@@ -27,9 +30,13 @@ public class Paddle extends JPanel implements KeyListener
 		super.paintComponent(g);
 		setBackground(Color.BLACK);
 		g.setColor(Color.WHITE);
-		g.fillRect(xPos, yPos, 100, 20);
-
+		g.fillRect(paddleX, paddleY, 100, 20);
+		g.fillOval(ball.getX(),ball.getY(),ball.getWidth(),ball.getHeight());
+		
 	}
+	
+
+
 
 	public void keyTyped(KeyEvent e)
 	{
@@ -44,23 +51,23 @@ public class Paddle extends JPanel implements KeyListener
 		if (code == KeyEvent.VK_RIGHT)
 		{
 			repaint();
-			xPos = xPos + 11;
+			paddleX = paddleX + 11;
 		} else if (code == KeyEvent.VK_LEFT)
 		{
 			repaint();
-			xPos = xPos - 11;
+			paddleX = paddleX - 11;
 		}
 		
 //SUPER ADVANCED COLLISION CHECKING
-		if (xPos > 720 && xPos < 740)
+		if (paddleX > 720 && paddleX < 740)
 		{
 			repaint();
-			xPos = xPos - 21;
+			paddleX = paddleX - 21;
 		}
-		else if (xPos < -20)
+		else if (paddleX < -20)
 		{
 			repaint();
-			xPos = xPos + 21;
+			paddleX = paddleX + 21;
 		}
 
 	}
@@ -69,5 +76,7 @@ public class Paddle extends JPanel implements KeyListener
 	{
 		// not used
 	}
+	
+	
 
 }
